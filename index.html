@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara777 – Official App</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1424957393137731');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1424957393137731&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --dark: #1a0e00;
+            --dark-2: #2c1a04;
+            --gold-dark: #8B7300;
+            --gold: #C9A84C;
+            --gold-bright: #FFD700;
+            --gold-light: #F5C518;
+            --yellow: #FFC107;
+            --yellow-soft: #FFF8E1;
+            --yellow-bg: #FFFBEB;
+            --gold-glow: rgba(201, 168, 76, 0.30);
+            --gold-glow-strong: rgba(255, 215, 0, 0.35);
+            --white: #ffffff;
+            --light-bg: #FFFBEB;
+            --text-dark: #1a0e00;
+            --text-soft: #5a4a2a;
+            --card-shadow: 0 12px 30px rgba(26, 14, 0, 0.14);
+            --gold-gradient: linear-gradient(135deg, #1a0e00 0%, #8B7300 50%, #C9A84C 100%);
+            --gold-gradient-soft: linear-gradient(135deg, #2c1a04, #C9A84C);
+            --gold-gradient-btn: linear-gradient(135deg, #B8860B, #FFD700);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            background: var(--light-bg);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 500px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: var(--light-bg);
+            padding: 0 10px;
+            position: relative;
+        }
+
+        .top-bar {
+            background: var(--gold-gradient);
+            color: var(--white);
+            text-align: center;
+            padding: 14px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 4px 20px rgba(26, 14, 0, 0.25);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .top-bar i {
+            margin-right: 8px;
+            color: var(--gold-bright);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 10px 24px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+            border-radius: 0 0 40px 40px;
+        }
+
+        .brand-logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 12px 35px var(--gold-glow);
+            margin-bottom: 10px;
+            border: 3px solid var(--gold-bright);
+            transition: transform 0.3s ease;
+            background: #fff;
+        }
+
+        .brand-logo-img:hover {
+            transform: scale(1.04);
+        }
+
+        .brand-logo-text {
+            display: none;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--gold-bright);
+            letter-spacing: 2px;
+        }
+
+        .brand-logo-img:not([src]),
+        .brand-logo-img[src=""] {
+            display: none;
+        }
+
+        .brand-logo-img:not([src])+.brand-logo-text,
+        .brand-logo-img[src=""]+.brand-logo-text {
+            display: inline-block;
+        }
+
+        .brand-name {
+            font-size: 42px;
+            font-weight: 900;
+            margin: 4px 0 0;
+            letter-spacing: 1px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .brand-sub {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-top: 6px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: var(--yellow-soft);
+            padding: 4px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            -webkit-text-fill-color: var(--gold-dark);
+            border: 1px solid var(--gold);
+        }
+
+        .sticky-cta {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px 0 14px;
+            border-bottom: 2px solid var(--gold);
+            backdrop-filter: blur(6px);
+            background: rgba(255, 251, 235, 0.92);
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 0 auto;
+            max-width: 100%;
+            background: var(--gold-gradient-btn);
+            color: var(--white);
+            padding: 17px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.6px;
+            white-space: nowrap;
+            box-shadow: 0 10px 30px var(--gold-glow-strong);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(255, 215, 0, 0.45);
+        }
+
+        .download-btn i {
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .download-btn .btn-badge {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .content-wrap {
+            padding: 28px 6px 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gold-gradient-soft);
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 22px 24px;
+            border-radius: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--gold);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 16px 36px rgba(26, 14, 0, 0.16);
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--yellow-soft) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .icon-box {
+            background: var(--yellow-soft);
+            color: var(--gold-dark);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            margin-right: 16px;
+            font-size: 22px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold);
+        }
+
+        .why-card:hover .icon-box {
+            background: var(--gold);
+            color: var(--white);
+            transform: scale(1.05);
+            border-color: var(--gold-bright);
+        }
+
+        .why-card h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .why-card p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-soft);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-banner {
+            background: var(--gold-gradient);
+            color: var(--white);
+            padding: 42px 20px 38px;
+            text-align: center;
+            border-radius: 32px;
+            margin: 28px 4px 20px;
+            box-shadow: 0 14px 40px rgba(26, 14, 0, 0.30);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .stats-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .stats-banner h2 {
+            font-size: 44px;
+            font-weight: 900;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-banner h2 i {
+            color: var(--gold-bright);
+            margin-right: 6px;
+        }
+
+        .stats-banner p {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 6px 0 0;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .stats-banner .stats-sub {
+            font-size: 13px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 18px 0 8px;
+        }
+
+        .feature-tag {
+            background: var(--white);
+            color: var(--dark);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(26, 14, 0, 0.06);
+            border: 1px solid var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-tag i {
+            color: var(--gold-dark);
+            font-size: 12px;
+        }
+
+        footer {
+            padding: 30px 10px 50px;
+            text-align: center;
+            border-top: 2px solid var(--gold);
+            margin-top: 20px;
+        }
+
+        footer .footer-brand {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        footer .footer-brand span {
+            color: var(--gold-dark);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-soft);
+            margin: 4px 0;
+        }
+
+        footer .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 14px 0 10px;
+        }
+
+        footer .footer-social a {
+            color: var(--gold-dark);
+            background: var(--yellow-soft);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold);
+        }
+
+        footer .footer-social a:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateY(-3px);
+            border-color: var(--gold-bright);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: var(--dark);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 9999;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--gold);
+            white-space: nowrap;
+        }
+
+        .toast i {
+            color: var(--gold-bright);
+            font-size: 18px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 420px) {
+            .brand-name { font-size: 34px; }
+            .brand-logo-img { width: 90px; height: 90px; }
+            .download-btn { font-size: 16px; padding: 14px 20px; gap: 10px; }
+            .download-btn .btn-badge { display: none; }
+            .stats-banner h2 { font-size: 36px; }
+            .why-card { padding: 18px 18px; }
+            .section-title { font-size: 24px; }
+            .toast {
+                font-size: 12px;
+                padding: 12px 20px;
+                white-space: normal;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .brand-name { font-size: 28px; }
+            .download-btn { font-size: 14px; padding: 12px 16px; }
+            .download-btn i { font-size: 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <i class="fa-solid fa-crown"></i> INDIA'S MOST TRUSTED &amp; NO. 1 APP
+        </div>
+
+        <!-- HEADER -->
+        <header>
+            <img src="favi.png" alt="Sara777 Logo" class="brand-logo-img" id="brandLogo">
+            <span class="brand-logo-text">S</span>
+
+            <h1 class="brand-name">Sara777</h1>
+            <span class="brand-sub">⭐ THE MOST RELIABLE PLATFORM</span>
+
+            <div class="feature-tags">
+                <span class="feature-tag"><i class="fa-solid fa-shield-halved"></i> Secure</span>
+                <span class="feature-tag"><i class="fa-solid fa-bolt"></i> Fast</span>
+                <span class="feature-tag"><i class="fa-solid fa-star"></i> Trusted</span>
+            </div>
+        </header>
+
+        <!-- STICKY CTA -->
+        <div class="sticky-cta">
+            <!-- ⚠️ apna APK URL yahan daalo -->
+            <a href="https://sara777.life/Sara777.apk"
+               class="download-btn"
+               id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                DOWNLOAD OFFICIAL APK
+                <span class="btn-badge">v3.2</span>
+            </a>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-wrap">
+            <h2 class="section-title">Why Choose Sara777?</h2>
+
+            <div class="why-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Lightning Fast Results</h3>
+                </div>
+                <p>Get instant updates with zero delay using our high-speed enterprise servers.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Verified Market Rates</h3>
+                </div>
+                <p>Trusted and accurate market data used by thousands of users daily across India.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Secure &amp; Private</h3>
+                </div>
+                <p>Your identity and data remain completely protected with end-to-end encryption.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Easy to Use App</h3>
+                </div>
+                <p>Clean, intuitive interface designed for all Android users — no learning curve.</p>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-banner">
+            <h2><i class="fa-solid fa-users"></i> 1 Million+</h2>
+            <p>Happy Users &amp; Counting</p>
+            <div class="stats-sub">⭐ 4.9 ★ Average Rating</div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <span class="footer-brand">Sara <span>777</span></span>
+            <p><strong>OFFICIAL PLATFORM</strong></p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram-plane"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p>© 2026 Sara777. All Rights Reserved.</p>
+            <p style="font-size: 11px; opacity: 0.6; margin-top: 2px;">Made with ❤️ in India</p>
+        </footer>
+
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Event tracked!</span>
+    </div>
+
+    <!-- ===== DOWNLOAD + SUBSCRIBE EVENT TRACKING ===== -->
+    <script>
+        (function () {
+            const downloadBtn = document.getElementById('downloadBtn');
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            let toastTimer = null;
+
+            function showToast(msg) {
+                toastMsg.textContent = msg || '✅ Event tracked!';
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(function () {
+                    toast.classList.remove('show');
+                }, 2500);
+            }
+
+            function fireSubscribeEvent() {
+                const eventId = 'sub_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+
+                if (typeof fbq === 'function') {
+                    // ✅ Subscribe (main conversion)
+                    fbq('track', 'Subscribe', {
+                        value: 1.00,
+                        currency: 'INR',
+                        content_name: 'Sara777 APK',
+                        content_category: 'Download',
+                        predicted_ltv: 0.00
+                    }, { eventID: eventId });
+
+                    // ✅ Lead (backup)
+                    fbq('track', 'Lead', {
+                        value: 1.00,
+                        currency: 'INR',
+                        content_name: 'Sara777 APK'
+                    }, { eventID: eventId + '_lead' });
+
+                    // ✅ Custom event
+                    fbq('trackCustom', 'APKDownload', {
+                        content_name: 'Sara777 APK',
+                        version: 'v3.2'
+                    }, { eventID: eventId + '_apk' });
+
+                    console.log('✅ Meta events fired:', eventId);
+                } else {
+                    console.warn('⚠️ fbq not loaded — event skipped');
+                }
+            }
+
+            // ✅ MAIN LOGIC:
+            // 1. preventDefault NAHI kiya → browser khud link handle karega
+            //    (download 100% guaranteed, kabhi fail nahi hoga)
+            // 2. Click pe turant pixel fire → navigation se pehle request ja chuki hoti hai
+            // 3. Meta Pixel internally image/sendBeacon use karta hai jo navigation ke
+            //    baad bhi complete ho jata hai
+            downloadBtn.addEventListener('click', function () {
+                fireSubscribeEvent();
+                showToast('✅ Download shuru ho raha hai...');
+            });
+
+            // Middle click / ctrl+click / right-click + open new tab
+            downloadBtn.addEventListener('auxclick', function (e) {
+                if (e.button === 1) {
+                    fireSubscribeEvent();
+                }
+            });
+
+            // Extra safety: keyboard se Enter dabane pe bhi fire
+            downloadBtn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    fireSubscribeEvent();
+                }
+            });
+
+        })();
+    </script>
+
+</body>
+</html>
